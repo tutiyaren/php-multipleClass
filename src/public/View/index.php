@@ -11,7 +11,7 @@
 
 <body>
 
-  <form action="complete.php" method="post">
+  <form action="../Controller/booking.php" method="post">
 
     <table>
 
@@ -31,7 +31,7 @@
       </tr>
 
     </table>
-    
+
     <input type="submit" value="送信"> 
 
   </form>
