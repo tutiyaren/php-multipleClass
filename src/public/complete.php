@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../vendor/autoload.php';
+use App\Model\Bookings;
 
 $name = filter_input(INPUT_POST, 'name');
 $email = filter_input(INPUT_POST, 'email');
@@ -10,18 +12,8 @@ if (empty($name) || empty($email) || empty($phone_number)) {
 }
 
 if (!empty($name) && !empty($email) && !empty($phone_number)) {
-    $dsn = 'mysql:host=mysql; dbname=bookingform; charset=utf8';
-    $dbUser = 'root';
-    $dbPassword = 'password';
-    $pdo = new PDO($dsn, $dbUser, $dbPassword);
-
-    $sql =
-        'INSERT INTO bookings (name, email, phone_number) VALUES (:name, :email, :phone_number)';
-    $statement = $pdo->prepare($sql);
-    $statement->bindValue(':name', $name);
-    $statement->bindValue(':email', $email);
-    $statement->bindValue(':phone_number', $phone_number);
-    $statement->execute();
+    $bookings = new Bookings();
+    $bookings->create($name, $email, $phone_number);
 
     $message = '<h2>予約完了^ ^</h2>';
 }
