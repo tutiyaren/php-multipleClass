@@ -1,16 +1,16 @@
 <?php
 session_start();
-$message = $_SESSION['message'] ?? '';
-unset($_SESSION['errors']);
+$errorMessage = $_SESSION['errorMessage'] ?? '';
+unset($_SESSION['errorMessage']);
 ?>
 
 <body>
 
 <h1>分を秒に変換しよう</h1>
 
-<p><?php echo $message; ?></p>
+<p><?php echo $errorMessage; ?></p>
 
-  <form action="./awnser.php" method="post">
+  <form action="./answer.php" method="post">
 
     <table>
 

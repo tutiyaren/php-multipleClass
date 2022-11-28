@@ -8,7 +8,7 @@ try {
     $seconds = $minutesObj->toSeconds()->value();
 } catch (\Exception $e) {
     session_start();
-    $_SESSION['message'] = $e->getMessage();
+    $_SESSION['errorMessage'] = $e->getMessage();
     header('Location: ./index.php');
     exit();
 }
