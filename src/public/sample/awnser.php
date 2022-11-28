@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 use App\Minutes;
 
 $minutes = filter_input(INPUT_POST, 'time');
@@ -18,8 +18,6 @@ try {
 
   <h1><?php echo $seconds; ?></h1>
   
-  <a href="./index.php">
-    <p>Top画面へ</p>
-  </a>
+  <a href="./index.php">Top画面へ</a>
 
 </body>
